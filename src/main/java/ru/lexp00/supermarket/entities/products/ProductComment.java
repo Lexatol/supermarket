@@ -3,6 +3,7 @@ package ru.lexp00.supermarket.entities.products;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import ru.lexp00.supermarket.entities.users.User;
 
 import javax.persistence.*;
 
@@ -17,12 +18,18 @@ public class ProductComment {
     @Column(name = "comment_id")
     private Long comment_id;
 
-    @Column(name = "description")
-    private String description;
+    @ManyToOne
+    @JoinColumn (name = "user_id")
+    private User user;
 
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
+
+    @Column(name = "description")
+    private String description;
+
+
 
 
 }

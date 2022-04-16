@@ -3,7 +3,12 @@ package ru.lexp00.supermarket.dto.users;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import ru.lexp00.supermarket.dto.products.ProductCommentDto;
+import ru.lexp00.supermarket.entities.products.ProductComment;
 import ru.lexp00.supermarket.entities.users.User;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Getter
 @Setter
@@ -13,11 +18,13 @@ public class UserDto {
     private String username;
     private String email;
     private int cashback;
+    private List<String> productCommentDtoList;
 
     public UserDto(User user) {
         this.id = user.getId();
         this.username = user.getUsername();
         this.email = user.getEmail();
         this.cashback = user.getCashback().getBonus();
+        this.productCommentDtoList = user.getProductCommentList().stream().map(ProductComment::getDescription).collect(Collectors.toList());
     }
 }

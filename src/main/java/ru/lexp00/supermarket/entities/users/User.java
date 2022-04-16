@@ -3,8 +3,10 @@ package ru.lexp00.supermarket.entities.users;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import ru.lexp00.supermarket.entities.products.ProductComment;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -31,4 +33,6 @@ public class User {
     @JoinColumn(name = "cash_id")
     private CashBack cashback;
 
+    @OneToMany(mappedBy = "user")
+    private List<ProductComment> productCommentList;
 }
