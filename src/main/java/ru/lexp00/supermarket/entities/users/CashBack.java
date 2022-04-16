@@ -11,11 +11,11 @@ import javax.persistence.*;
 @Setter
 public class CashBack {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    @Column (name = "cash_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cash_id")
     private Long cash_id;
 
-    @Column (name = "bonus")
+    @Column(name = "bonus")
     private int bonus;
 
 }

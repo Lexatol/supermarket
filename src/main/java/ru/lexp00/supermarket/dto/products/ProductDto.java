@@ -18,6 +18,7 @@ public class ProductDto {
     private int price;
     private List<String> category;
     private String description;
+    private List<ProductCommentDto> comment;
 
     public ProductDto(Product product) {
         this.id = product.getId();
@@ -25,5 +26,6 @@ public class ProductDto {
         this.price = product.getPrice();
         this.category = product.getCategoryList().stream().map(Category::getTitle).collect(Collectors.toList());
         this.description = product.getDescription();
+        this.comment = product.getProductCommentList().stream().map(ProductCommentDto::new).collect(Collectors.toList());
     }
 }

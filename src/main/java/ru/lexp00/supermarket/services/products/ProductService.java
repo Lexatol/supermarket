@@ -16,6 +16,9 @@ public class ProductService {
 
     public List<ProductDto> findAll() {
         return productRepository.findAll().stream().map(ProductDto::new).collect(Collectors.toList());
-//        return productRepository.findAll();
+    }
+
+    public ProductDto findById(Long id) {
+        return productRepository.findById(id).map(ProductDto::new).orElseThrow();
     }
 }

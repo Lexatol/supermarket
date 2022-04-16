@@ -58,3 +58,14 @@ insert into product_category (product_id, category_id) values
 (1, 1), (2, 2), (3, 3),
 (1, 2);
 
+
+create TABLE product_comment (
+        comment_id          bigserial primary key,
+        description         varchar(1000) NOT NULL,
+        product_id          bigint references products(id)
+);
+
+insert into product_comment(description, product_id) values
+('отличный телевизор, замечательное качество, гарантия 10 лет', 1),
+('Лучше ноутбука не бывает, купил за 2000 долларов, а сейчас стоит 3000 уже', 1);
+

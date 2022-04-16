@@ -15,22 +15,25 @@ import java.util.List;
 public class Product {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    @Column (name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
-    @Column (name = "title")
+    @Column(name = "title")
     private String title;
 
     @Column(name = "price")
     private int price;
 
     @ManyToMany
-    @JoinTable (name = "product_category",
-                joinColumns = @JoinColumn (name = "product_id"),
-                inverseJoinColumns = @JoinColumn (name = "category_id"))
+    @JoinTable(name = "product_category",
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id"))
     private List<Category> categoryList;
 
-    @Column (name = "description")
+    @Column(name = "description")
     private String description;
+
+    @OneToMany(mappedBy = "product")
+    private List<ProductComment> productCommentList;
 }

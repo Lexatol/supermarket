@@ -2,6 +2,7 @@ package ru.lexp00.supermarket.controllers.products;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.lexp00.supermarket.dto.products.ProductDto;
@@ -19,6 +20,11 @@ public class ProductController {
     @GetMapping
     public List<ProductDto> getAll() {
         return productService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public ProductDto getById(@PathVariable Long id) {
+        return productService.findById(id);
     }
 
 
