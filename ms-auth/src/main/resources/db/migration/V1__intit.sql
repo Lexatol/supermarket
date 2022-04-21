@@ -34,7 +34,7 @@ create table role_user(
         role_id         bigint not null,
         primary key (user_id, role_id),
         foreign key (user_id) references users(id),
-        foreigh key (role_id) references roles(id)
+        foreign key (role_id) references roles(id)
 );
 
 insert into role_user(user_id, role_id) values

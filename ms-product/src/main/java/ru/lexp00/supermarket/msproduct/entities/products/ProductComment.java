@@ -6,7 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-//@Entity
+@Entity
 @Table(name = "product_comment")
 @Setter
 @Getter
@@ -16,10 +16,11 @@ public class ProductComment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "comment_id")
     private Long comment_id;
-
+//
 //    @ManyToOne
 //    @JoinColumn (name = "user_id")
-//    private User user;
+    @Column (name = "user_id")
+    private Long user_id;
 
     @ManyToOne
     @JoinColumn(name = "product_id")

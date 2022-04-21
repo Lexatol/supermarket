@@ -9,7 +9,8 @@ Stack:
 - Spring security
 - Spring cloud
 - H2 database
-- PosgreSQL
 - Flyway
+- PosgreSQL
+- REDIS
 - Rabbit MQ
 - Lombok

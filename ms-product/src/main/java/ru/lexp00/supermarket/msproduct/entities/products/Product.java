@@ -1,8 +1,7 @@
 package ru.lexp00.supermarket.msproduct.entities.products;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import ru.lexp00.supermarket.msproduct.entities.categories.Category;
 
 import javax.persistence.*;
 import java.util.List;
@@ -12,6 +11,8 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Product {
 
     @Id
@@ -34,6 +35,6 @@ public class Product {
     @Column(name = "description")
     private String description;
 
-//    @OneToMany(mappedBy = "product")
-//    private List<ProductComment> productCommentList;
+    @OneToMany(mappedBy = "product")
+    private List<ProductComment> productCommentList;
 }

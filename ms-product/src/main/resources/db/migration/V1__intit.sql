@@ -34,14 +34,14 @@ insert into product_category (product_id, category_id) values
 (1, 2);
 
 
---create TABLE product_comment (
---        comment_id          bigserial primary key,
---        user_id             bigint NOT NULL references users(id),
---        description         varchar(1000) NOT NULL,
---        product_id          bigint references products(id)
---);
---
---insert into product_comment(user_id, description, product_id) values
---(1, 'отличный телевизор, замечательное качество, гарантия 10 лет', 1),
---(2, 'Лучше ноутбука не бывает, купил за 2000 долларов, а сейчас стоит 3000 уже', 1);
+create TABLE product_comment (
+        comment_id          bigserial primary key,
+        description         varchar(1000) NOT NULL,
+        user_id             bigint NOT NULL,
+        product_id          bigint references products(id)
+);
+
+insert into product_comment(description, user_id, product_id) values
+('отличный телевизор, замечательное качество, гарантия 10 лет',1, 1),
+('Лучше ноутбука не бывает, купил за 2000 долларов, а сейчас стоит 3000 уже',2, 1);
 

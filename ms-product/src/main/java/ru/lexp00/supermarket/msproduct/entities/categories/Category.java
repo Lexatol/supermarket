@@ -1,8 +1,9 @@
-package ru.lexp00.supermarket.msproduct.entities.products;
+package ru.lexp00.supermarket.msproduct.entities.categories;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import ru.lexp00.supermarket.msproduct.entities.products.Product;
 
 import javax.persistence.*;
 import java.util.List;
