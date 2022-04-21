@@ -1,4 +1,4 @@
-package ru.lexp00.supermarket.mscore.clients;
+package ru.lexp00.supermarket.msorder.services;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.HttpStatus;
