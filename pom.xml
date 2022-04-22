@@ -11,6 +11,7 @@
 		<module>ms-order</module>
 		<module>ms-product</module>
 		<module>eureka-server</module>
+		<module>gateway-server</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
