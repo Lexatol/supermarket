@@ -1,21 +1,16 @@
 package ru.lexp00.supermarket.mscore.dto.orders;
 
 import lombok.*;
+import ru.lexp00.supermarket.mscore.dto.orders.OrderItemDto;
 
 import java.util.List;
 
 @Getter
 @Setter
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class OrderDto {
-    private Long id;
-    private String userName;
+@NoArgsConstructor
+public class CartDto {
     private List<OrderItemDto> items;
-    private String address;
-    private String phone;
-    private String email;
     private int totalPrice;
-
 }

@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.lexp00.supermarket.mscore.dto.products.ProductCommentDto;
 import ru.lexp00.supermarket.mscore.dto.products.ProductDto;
+import ru.lexp00.supermarket.mscore.exeptions.ResourceNotFoundException;
 import ru.lexp00.supermarket.msproduct.entities.categories.Category;
 import ru.lexp00.supermarket.msproduct.entities.products.Product;
 import ru.lexp00.supermarket.msproduct.entities.products.ProductComment;
@@ -30,7 +31,7 @@ public class ProductService {
     }
 
     public ProductDto findById(Long id) {
-        return productRepository.findById(id).map(this::toDto).orElseThrow();//TODO добавить исключение
+        return productRepository.findById(id).map(this::toDto).orElseThrow(()-> new ResourceNotFoundException("Product with " + id + " is not found"));
     }
 
     public ProductDto saveOrUpdate(ProductDto productDto) {

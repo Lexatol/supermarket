@@ -7,16 +7,12 @@ import lombok.RequiredArgsConstructor;
 //import org.springframework.security.core.userdetails.UserDetailsService;
 //import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import ru.lexp00.supermarket.msauth.entities.users.Role;
-import ru.lexp00.supermarket.msauth.entities.users.User;
+import ru.lexp00.supermarket.msauth.entities.User;
 import ru.lexp00.supermarket.msauth.repositories.UserRepository;
 import ru.lexp00.supermarket.mscore.dto.users.UserDto;
+import ru.lexp00.supermarket.mscore.exeptions.ResourceNotFoundException;
 
-import javax.swing.text.html.parser.Parser;
-import java.util.Collection;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -25,8 +21,10 @@ import java.util.stream.Collectors;
 public class UserService {
     private final UserRepository userRepository;
 
-    public Optional<User> findByUsername(String username) {
-        return userRepository.findByUsername(username);
+    public UserDto findByUsername(String username) {
+        return userRepository.findByUsername(username)
+                .map(this::userToDto)
+                .orElseThrow(()-> new ResourceNotFoundException("User with this username '" + username + "' is not found"));
     }
 
     public UserDto findById(Long id) {

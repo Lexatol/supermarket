@@ -1,4 +1,4 @@
-package ru.lexp00.supermarket.msauth.entities.users;
+package ru.lexp00.supermarket.msauth.entities;
 
 import lombok.Getter;
 import lombok.Setter;

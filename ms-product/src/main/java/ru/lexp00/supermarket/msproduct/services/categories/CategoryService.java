@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import ru.lexp00.supermarket.mscore.dto.products.CategoryDto;
+import ru.lexp00.supermarket.mscore.exeptions.ResourceNotFoundException;
 import ru.lexp00.supermarket.msproduct.entities.categories.Category;
 import ru.lexp00.supermarket.msproduct.repositories.categories.CategoryRepository;
 
@@ -18,17 +19,20 @@ public class CategoryService {
     private final ModelMapper modelMapper;
 
     public Category findByTitle(String title) {
-        return categoryRepository.findByTitle(title).orElseThrow();
+        return categoryRepository.findByTitle(title)
+                .orElseThrow(()-> new ResourceNotFoundException("Category with title ' " + title + "' is not found"));
     }
 
     public List<CategoryDto> findAll() {
         return categoryRepository.findAll().stream()
-                .map(this::toDto).collect(Collectors.toList());
+                .map(this::toDto)
+                .collect(Collectors.toList());
     }
 
     public CategoryDto findById(Long id) {
         return categoryRepository.findById(id)
-                .map(this::toDto).orElseThrow(); //TODO добавить исключение
+                .map(this::toDto)
+                .orElseThrow(()-> new ResourceNotFoundException("Category with " + id + " is not found"));
     }
 
     public CategoryDto saveOrUpdate(CategoryDto categoryDto) {

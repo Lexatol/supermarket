@@ -1,11 +1,8 @@
-package ru.lexp00.supermarket.msauth.controllers.users;
+package ru.lexp00.supermarket.msauth.controllers;
 
 import lombok.RequiredArgsConstructor;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.lexp00.supermarket.msauth.services.UserService;
 import ru.lexp00.supermarket.mscore.dto.users.UserDto;
 
@@ -20,5 +17,10 @@ public class UserController {
     @GetMapping ("/{id}")
     public UserDto getById(@PathVariable Long id) {
         return userService.findById(id);
+    }
+
+    @GetMapping ("/username")
+    public UserDto getByUsername(@RequestParam String username) {
+        return userService.findByUsername(username);
     }
 }

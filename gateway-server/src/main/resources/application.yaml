@@ -31,7 +31,7 @@ spring:
         - id: ms-auth
           uri: lb://ms-auth
           predicates:
-            - Path=/api/*/auth/**
+            - Path=/api/*/auth/**, /api/*/users/**
         - id: ms-product
           uri: lb://ms-product
           predicates:
@@ -39,7 +39,7 @@ spring:
         - id: ms-order
           uri: lb://ms-order
           predicates:
-            - Path=/api/*/orders/**
+            - Path=/api/*/orders/**, /api/*/cart/**
     loadbalancer:
       ribbon:
         enabled: false

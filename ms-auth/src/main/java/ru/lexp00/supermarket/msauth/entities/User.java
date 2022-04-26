@@ -1,4 +1,4 @@
-package ru.lexp00.supermarket.msauth.entities.users;
+package ru.lexp00.supermarket.msauth.entities;
 
 import lombok.*;
 
@@ -32,12 +32,9 @@ public class User {
     @JoinColumn(name = "cash_id")
     private CashBack cashback;
 
-//    @OneToMany(mappedBy = "user")
-//    private List<ProductComment> productCommentList;
-
     @ManyToMany
-    @JoinTable (name = "role_user",
-                joinColumns = @JoinColumn (name = "user_id"),
-                inverseJoinColumns = @JoinColumn (name = "role_id"))
+    @JoinTable(name = "role_user",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
     private List<Role> roles;
 }

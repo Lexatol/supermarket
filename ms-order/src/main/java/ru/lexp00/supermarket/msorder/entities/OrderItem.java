@@ -1,8 +1,6 @@
 package ru.lexp00.supermarket.msorder.entities;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -11,6 +9,8 @@ import javax.persistence.*;
 @Setter
 @Getter
 @NoArgsConstructor
+@Builder
+@AllArgsConstructor
 public class OrderItem {
 
     @Id
@@ -23,7 +23,7 @@ public class OrderItem {
     private Order order;
 
     @Column(name = "product_id")
-    private Long product_id;
+    private Long productId;
 
     @Column(name = "quantity")
     private int quantity;
@@ -33,4 +33,15 @@ public class OrderItem {
 
     @Column(name = "total_price")
     private int totalPrice;
+
+    public void inc() {
+        quantity++;
+        totalPrice = price * quantity;
+    }
+
+    public void dec() {
+        quantity--;
+        totalPrice = price * quantity;
+    }
+
 }

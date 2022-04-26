@@ -20,7 +20,7 @@ public class ProductController {
     }
 
     @GetMapping("/ids")
-    public List<ProductDto> getAllProductByIds(List<Long> ids) {
+    public List<ProductDto> getAllProductByIds(@RequestParam List<Long> ids) {
         return productService.findAllByIds(ids);
     }
 

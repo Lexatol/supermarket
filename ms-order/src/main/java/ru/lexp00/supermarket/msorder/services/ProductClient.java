@@ -14,7 +14,7 @@ public interface ProductClient {
     List<ProductDto> getAllProduct();
 
     @GetMapping("api/v1/products/ids")
-    List<ProductDto> getAllProductByIds(List<Long> ids);
+    List<ProductDto> getAllProductByIds(@RequestParam List<Long> ids);
 
     @GetMapping("api/v1/products/{id}")
     ProductDto getProductById(@PathVariable Long id);
