@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.lexp00.supermarket.mscore.dto.orders.CartDto;
 import ru.lexp00.supermarket.msorder.services.CartService;
+import ru.lexp00.supermarket.routinglib.dtos.CartDto;
 
 @RestController
 @RequestMapping("api/v1/cart")

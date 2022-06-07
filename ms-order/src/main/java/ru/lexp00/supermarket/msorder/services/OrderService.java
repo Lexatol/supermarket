@@ -2,13 +2,13 @@ package ru.lexp00.supermarket.msorder.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.lexp00.supermarket.mscore.dto.orders.OrderDto;
-import ru.lexp00.supermarket.mscore.dto.orders.OrderItemDto;
 import ru.lexp00.supermarket.mscore.exeptions.ResourceNotFoundException;
 import ru.lexp00.supermarket.msorder.Bean.Cart;
 import ru.lexp00.supermarket.msorder.entities.Order;
 import ru.lexp00.supermarket.msorder.entities.OrderItem;
 import ru.lexp00.supermarket.msorder.repositories.OrderRepository;
+import ru.lexp00.supermarket.routinglib.dtos.OrderDto;
+import ru.lexp00.supermarket.routinglib.dtos.OrderItemDto;
 
 import java.util.List;
 import java.util.stream.Collectors;

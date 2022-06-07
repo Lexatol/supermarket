@@ -17,16 +17,17 @@ insert into cashback (bonus) values
 create table users (
         id                  bigserial primary key,
         username            varchar(100) NOT NULL,
-        email               varchar(200) NOT NULL unique,
+        email               varchar(200) unique,
         password            varchar(200) NOT NULL,
         cash_id             bigint,
         foreign key (cash_id) references cashback (cash_id)
 );
 
 insert into users (username, email, password, cash_id) values
-('Petya', 'petya@gmail.com', 100, 1),
-('Olya', 'olya@gmail.com', 100, 2),
-('Vasya', 'vasya@gmail.com', 100, 3);
+('Petya', 'petya@gmail.com', '$2a$10$.oHgYlwBWyUJixHARfz1teLpzGddJ73quW7/MRlCZ8Tj7DLC76am6', 1),
+('Olya', 'olya@gmail.com', '$2a$10$.oHgYlwBWyUJixHARfz1teLpzGddJ73quW7/MRlCZ8Tj7DLC76am6', 2),
+('Vasya', 'vasya@gmail.com', '$2a$10$.oHgYlwBWyUJixHARfz1teLpzGddJ73quW7/MRlCZ8Tj7DLC76am6', 3);
+--100
 
 
 create table role_user(

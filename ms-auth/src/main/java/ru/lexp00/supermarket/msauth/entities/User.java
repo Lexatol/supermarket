@@ -32,7 +32,7 @@ public class User {
     @JoinColumn(name = "cash_id")
     private CashBack cashback;
 
-    @ManyToMany
+    @ManyToMany (fetch = FetchType.EAGER)
     @JoinTable(name = "role_user",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))

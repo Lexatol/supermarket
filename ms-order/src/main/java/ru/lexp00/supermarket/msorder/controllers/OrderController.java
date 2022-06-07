@@ -2,14 +2,10 @@ package ru.lexp00.supermarket.msorder.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.lexp00.supermarket.mscore.dto.orders.OrderDto;
 import ru.lexp00.supermarket.msorder.Bean.Cart;
-import ru.lexp00.supermarket.msorder.entities.Order;
-import ru.lexp00.supermarket.msorder.services.CartService;
 import ru.lexp00.supermarket.msorder.services.OrderService;
-import ru.lexp00.supermarket.msorder.services.UserClient;
+import ru.lexp00.supermarket.routinglib.dtos.OrderDto;
 
-import java.security.Principal;
 import java.util.List;
 
 @RestController

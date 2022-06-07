@@ -3,11 +3,11 @@ package ru.lexp00.supermarket.msorder.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.lexp00.supermarket.mscore.dto.orders.OrderItemDto;
-import ru.lexp00.supermarket.mscore.dto.orders.CartDto;
-import ru.lexp00.supermarket.mscore.dto.products.ProductDto;
 import ru.lexp00.supermarket.msorder.Bean.Cart;
 import ru.lexp00.supermarket.msorder.entities.OrderItem;
+import ru.lexp00.supermarket.routinglib.dtos.CartDto;
+import ru.lexp00.supermarket.routinglib.dtos.OrderItemDto;
+import ru.lexp00.supermarket.routinglib.dtos.ProductDto;
 
 import java.util.Iterator;
 import java.util.List;

@@ -3,8 +3,8 @@ package ru.lexp00.supermarket.msproduct.controllers.categories;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import ru.lexp00.supermarket.mscore.dto.products.CategoryDto;
 import ru.lexp00.supermarket.msproduct.services.categories.CategoryService;
+import ru.lexp00.supermarket.routinglib.dtos.CategoryDto;
 
 import java.util.List;
 

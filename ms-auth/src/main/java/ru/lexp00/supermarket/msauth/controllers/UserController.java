@@ -4,9 +4,7 @@ import lombok.RequiredArgsConstructor;
 
 import org.springframework.web.bind.annotation.*;
 import ru.lexp00.supermarket.msauth.services.UserService;
-import ru.lexp00.supermarket.mscore.dto.users.UserDto;
-
-import java.util.List;
+import ru.lexp00.supermarket.routinglib.dtos.UserDto;
 
 @RestController
 @RequestMapping("api/v1/users")

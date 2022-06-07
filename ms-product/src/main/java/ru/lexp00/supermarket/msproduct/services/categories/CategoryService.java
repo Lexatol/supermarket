@@ -3,10 +3,10 @@ package ru.lexp00.supermarket.msproduct.services.categories;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import ru.lexp00.supermarket.mscore.dto.products.CategoryDto;
 import ru.lexp00.supermarket.mscore.exeptions.ResourceNotFoundException;
 import ru.lexp00.supermarket.msproduct.entities.categories.Category;
 import ru.lexp00.supermarket.msproduct.repositories.categories.CategoryRepository;
+import ru.lexp00.supermarket.routinglib.dtos.CategoryDto;
 
 import java.util.List;
 import java.util.stream.Collectors;

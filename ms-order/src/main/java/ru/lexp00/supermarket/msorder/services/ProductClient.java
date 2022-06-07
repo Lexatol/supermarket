@@ -3,7 +3,7 @@ package ru.lexp00.supermarket.msorder.services;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import ru.lexp00.supermarket.mscore.dto.products.ProductDto;
+import ru.lexp00.supermarket.routinglib.dtos.ProductDto;
 
 import java.util.List;
 
